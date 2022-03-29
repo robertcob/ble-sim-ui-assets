@@ -1,7 +1,6 @@
 from textwrap import fill
 from tkinter import *
 root = Tk()
-# root["bg"] = "grey"
 def start():
     pass
 
@@ -24,14 +23,12 @@ topInnerFrame2.pack(side=LEFT)
 topInnerFrame3.pack(side=LEFT)
 
 startbutton = Button(topInnerFrame1, text="Start", fg="black", bg="grey")
-# startbutton.pack( side = LEFT)
 startbutton.pack(padx=23, pady=5)
 
 stopbutton = Button(topInnerFrame2, text="Stop", fg="black", bg="grey")
 stopbutton.pack(padx=22, pady=5)
 
 reloadButton = Button(topInnerFrame3, text="Reload", fg="black", bg="grey")
-# reloadButton.pack( side = RIGHT )
 reloadButton.pack(padx=23, pady=5)
 
 timeVar = StringVar()
