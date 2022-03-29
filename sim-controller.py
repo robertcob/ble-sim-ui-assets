@@ -1,9 +1,7 @@
+from textwrap import fill
 from tkinter import *
-
-
-
 root = Tk()
-
+# root["bg"] = "grey"
 def start():
     pass
 
@@ -13,29 +11,34 @@ def stop():
 def reload():
     pass
 
-parent = Frame(root, bg="grey")
-bottomframe = Frame(root, bg="grey")
-parent.pack() 
-bottomframe.pack( side = BOTTOM )
+topFrame = Frame(root, bg="grey", width=380, height=60)
+bottomframe = Frame(root, bg="grey", width= 380, height=60)
+topFrame.pack() 
+bottomframe.pack( side = BOTTOM, pady=26)
 
+topInnerFrame1 = Frame(topFrame,  width=126, height=60)
+topInnerFrame2 = Frame(topFrame,  width=126, height=60)
+topInnerFrame3 = Frame(topFrame, width=126, height=60)
+topInnerFrame1.pack(side=LEFT)
+topInnerFrame2.pack(side=LEFT)
+topInnerFrame3.pack(side=LEFT)
 
-startbutton = Button(parent, text="Start", fg="black", bg="white")
-startbutton.pack( side = LEFT)
+startbutton = Button(topInnerFrame1, text="Start", fg="black", bg="grey")
+# startbutton.pack( side = LEFT)
+startbutton.pack(padx=23, pady=5)
 
-stopbutton = Button(parent, text="Stop", fg="black", bg="white")
-stopbutton.pack( side = LEFT )
+stopbutton = Button(topInnerFrame2, text="Stop", fg="black", bg="grey")
+stopbutton.pack(padx=22, pady=5)
 
-reloadButton = Button(parent, text="Reload", fg="black", bg="white")
-reloadButton.pack( side = LEFT )
+reloadButton = Button(topInnerFrame3, text="Reload", fg="black", bg="grey")
+# reloadButton.pack( side = RIGHT )
+reloadButton.pack(padx=23, pady=5)
 
 timeVar = StringVar()
 timeVar.set("0.00")
-timeLabel = Label( bg="white", fg="black", text= "Time: ", padx=5)
-vartimeLabel = Label( bg="white", fg="black", textvariable=timeVar)
-
-timeLabel.pack(side=LEFT)
-vartimeLabel.pack(side=LEFT)
-
-
+timeLabel = Label(bottomframe, fg="white",  text= "Time:")
+vartimeLabel = Label(bottomframe, fg="white", textvariable=timeVar)
+timeLabel.pack(side = LEFT, fill=BOTH)
+vartimeLabel.pack(side = RIGHT, fill=BOTH)
 
 root.mainloop()
