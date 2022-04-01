@@ -33,7 +33,9 @@ sb.configure(command=tv.xview)
 
 ### example insertion into table
 ### will be used programatically in driver code
-### tv.insert("", END, values=("foobar", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
-
+tv.insert("", END, values=("626", "2", "send",  "'TYPE': 'advertisingPkt', 'SRC': 2, 'DST': 0, 'LSRC': 2, 'LDST': 0, 'SEQ': 0, 'DATA': None, 'CHANNEL': 7"))
+tv.insert("", END, values=("837", "1", "receive",  "'TYPE': 'advertisingPkt', 'SRC': 2, 'DST': 0, 'LSRC': 2, 'LDST': 0, 'SEQ': 0, 'DATA': None, 'CHANNEL': 7"))
+tv.insert("", END, values=("1126", "1", "send", '''"TYPE": "CONNECT", "SRC": 7, "DST": 0, "LSRC": 7, "LDST": 2, "SEQ": 0, "DATA": null, "CHANNEL": 7"'''))
+tv.insert("", END, values=("1616", "2", "receive", '''"TYPE": "CONNECT", "SRC": 7, "DST": 0, "LSRC": 7, "LDST": 2, "SEQ": 0, "DATA": null, "CHANNEL": 7"'''))
 #click in the TV to test
 root.mainloop()

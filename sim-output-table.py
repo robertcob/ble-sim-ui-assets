@@ -7,7 +7,7 @@ root = Tk()
 ff10=Font(family="Consolas", size=10)
 ff10b=Font(family="Consolas", size=10, weight=BOLD)
 
-# init a scrollabletv
+# init a scrollabletv for output table
 tv=ScrollableTV(root, selectmode=BROWSE, height=13, show="tree headings", columns=("Time", "Sensor", "Message"), style="Foo2.Treeview")
 tv.heading("Time", text="Time", anchor=W)
 tv.heading("Sensor", text="Sensor", anchor=W)
@@ -31,7 +31,23 @@ sb.configure(command=tv.xview)
 
 ### example insertion into table
 ### will be used programatically in driver code
-### tv.insert("", END, values=("foobar", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+tv.insert("", END, values=("0", "2", "Waiting for messages..."))
+tv.insert("", END, values=("0", "1", "Waiting for messages..."))
+tv.insert("", END, values=("1616", "2", "Connected to central"))
+tv.insert("", END, values=("1650", "1", "Connected to peripheral"))
+tv.insert("", END, values=("1721", "2", "Sending GATT  Profile..."))
+tv.insert("", END, values=("2505", "1", "Created Service w/ handle 0x180D"))
+tv.insert("", END, values=("2612", "1", "Identified serial-number characteristic"))
+tv.insert("", END, values=("3282", "1", "Identified model-number characteristic"))
+tv.insert("", END, values=("3397", "1", "Identified manufacturer-name characteristic"))
+tv.insert("", END, values=("3834", "1", "Service created w/ handle 0x2A29"))
+tv.insert("", END, values=("4215", "1", "Identified heart-measurment characteristic"))
+tv.insert("", END, values=("2824", "1", "Identified heart-rate-control-point characteristic"))
+tv.insert("", END, values=("5024", "2", "Completed sending profile"))
+tv.insert("", END, values=("5604", "2", "writing to handle 0x2A29 heart-measurment characteristic"))
+
+
+
 
 #click in the TV to test
 root.mainloop()

@@ -1,4 +1,4 @@
-import tkinter as tk
+from tkinter import *
 
 winH = 420
 winW = 580
@@ -34,8 +34,8 @@ def drawGrid(canvas, grid):
             drawNode(canvas, node)
     return
 
-window = tk.Tk()
-canvas = tk.Canvas(window, width=winW, height=winH, 
+window = Tk()
+canvas = Canvas(window, width=winW, height=winH, 
                    borderwidth=0, highlightthickness=0, bg="grey")
 canvas.pack()
 
